@@ -1,4 +1,4 @@
-name := "play-products"
+name := "play-with-play"
 
 version := "1.0-SNAPSHOT"
 

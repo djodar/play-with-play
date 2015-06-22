@@ -4,6 +4,7 @@ import org.junit.runner._
 
 import play.api.test._
 import play.api.test.Helpers._
+import play.mvc.Results
 
 /**
  * Add your spec here.
@@ -19,12 +20,14 @@ class ApplicationSpec extends Specification {
       route(FakeRequest(GET, "/boum")) must beNone
     }
 
-    "render the index page" in new WithApplication{
+    "redirects to list page" in new WithApplication{
       val home = route(FakeRequest(GET, "/")).get
 
-      status(home) must equalTo(OK)
-      contentType(home) must beSome.which(_ == "text/html")
-      contentAsString(home) must contain ("Your new application is ready.")
+      status(home) must equalTo(303)
+//      contentType(home) must beSome.which(_ == "text/html")
+//      contentAsString(home) must contain ("Paperclips Giant")
     }
+
+
   }
 }
