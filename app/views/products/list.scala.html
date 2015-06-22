@@ -1,12 +1,12 @@
 @(products: List[Product])(implicit lang: Lang)
 
 @main(Messages("application.name")) {
-
-    <dl class="products">
-        @for(product <- products) {
-            <dt>@product.name</dt>
-            <dd>@product.description</dd>
-        }
-    </dl>
-
+    @for(product <- products) {
+        <div class="panel panel-primary">
+            <div class="panel-heading">@product.name</div>
+            <div class="panel-body">
+                @product.description
+            </div>
+        </div>
+    }
 }

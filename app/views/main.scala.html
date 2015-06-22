@@ -9,11 +9,11 @@
         <link rel="stylesheet" media="screen" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap.css")">
     </head>
     <body>
-        <div class="screenshot">
-            <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body">
                 @content
-                @debug()
             </div>
+            <div class="panel-footer">@debug()</div>
         </div>
     </body>
 </html>
